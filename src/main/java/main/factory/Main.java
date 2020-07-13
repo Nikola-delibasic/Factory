@@ -4,21 +4,34 @@ public class Main {
 
     public static void main(String[] args) {
        System.out.println("Start");
-    int x = 5;
-    Car  auto1 = new Car();    
     
-    auto1.model = "Audi";
-    auto1.buildYear = 2003;
-    auto1.ccm = 3000;
+       
+    Car  audi8 = new Car();    
     
-    System.out.println("Model automobila 1 je : " + auto1.model);
+    audi8.setModel("Audi broj 8");
+    audi8.setCcm(1500);
+    audi8.setBuildYear(2003);
+    audi8.setColor("green");
     
-    int y = 29;
-    Car auto2 = new Car();
-    auto2.model = "Fiat";
-    auto2.buildYear = 2001;
+    audi8.printAttributes();
     
-    System.out.println("Model automobila 2 je : " + auto2.model);
+   
+    Car fiatPunto = new Car();
+    fiatPunto.setModel("Fiat Grande");
+    fiatPunto.setBuildYear (2001);
+    
+    fiatPunto.printAttributes();
+    
+    
+    
+    Car lada = new Car();
+    lada.setModel("Lada Niva");
+    
+    lada.printAttributes();
+   
+    
     }
+    
+    
     
 }
