@@ -7,6 +7,7 @@ public class Main {
     
        
     Car  audi8 = new Car();    
+    audi8.printAttributes();
     
     audi8.setModel("Audi broj 8");
     audi8.setCcm(1500);
@@ -24,11 +25,16 @@ public class Main {
     
     
     
-    Car lada = new Car();
-    lada.setModel("Lada Niva");
+    Car lada = new Car("Lada Niva", 1999, "black", 150, 1500);
+    
     
     lada.printAttributes();
    
+    Car Yugo = new Car("Yugo 45", 1999, 150, 120, 5, 12000);
+    Yugo.printAttributes();
+    Yugo.goToTravel(200);
+    Yugo.printAttributes();
+    
     
     }
     
