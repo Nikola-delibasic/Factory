@@ -32,7 +32,13 @@ public class Main {
    
     Car Yugo = new Car("Yugo 45", 1999, 150, 120, 5, 12000);
     Yugo.printAttributes();
+    
+//    prvo putovanje
     Yugo.goToTravel(200);
+    Yugo.printAttributes();
+    
+//    drugo putovanje
+    Yugo.goToTravel(50);
     Yugo.printAttributes();
     
     

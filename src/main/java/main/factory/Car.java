@@ -5,39 +5,43 @@ public class Car {
     
     private String model;
     private int buildYear;
-    private String color = "undefined";
-    private int maxSpeed;
+    private String color;
+    private int MaxSpeed;
     private int Ccm;
     private int consumption;
-    private int milage;
+    private int Milage;
+    private int fuel;
     
     public Car() {
-        this.model = "";
+        this.model = "undefined";
         this.buildYear = -1;
         this.color = "undefined";
-        this.maxSpeed = -1;
+        this.MaxSpeed = -1;
         this.Ccm = -1;
         this.consumption = 0;
-        this.milage = 0;
+        this.Milage = 0;
+        this.fuel = 0;
     }
     
-     public Car(String customModel, int BuildYear, String color, int maxSpeed, int Ccm) {
+     public Car(String customModel, int BuildYear, String customcolor, int maxSpeed, int customCcm) {
         this.model = customModel;
         this.buildYear = BuildYear;
-        this.color = color;
-        this.maxSpeed = maxSpeed;
-        this.Ccm = Ccm;
+        this.color = customcolor;
+        this.MaxSpeed = maxSpeed;
+        this.Ccm = customCcm;
+        this.consumption = consumption;
+        this.fuel = fuel;
         
     }
 
-    public Car(String model, int buildYear, int maxSpeed, int Ccm, int consumption, int milage) {
+    public Car(String model, int buildYear, int maxSpeed, int Ccm, int consumption, int Milage) {
         this.model = model;
         this.buildYear = buildYear;
-        this.maxSpeed = maxSpeed;
+        this.MaxSpeed = maxSpeed;
         this.Ccm = Ccm;
         this.consumption = consumption;
-        this.milage = milage;
-        
+        this.Milage = Milage;
+        this.fuel = fuel;
     }
     
      
@@ -67,11 +71,11 @@ public class Car {
     }
 
     public int getMaxSpeed() {
-        return maxSpeed;
+        return MaxSpeed;
     }
 
     public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+        this.MaxSpeed = maxSpeed;
     }
 
     public int getCcm() {
@@ -86,16 +90,25 @@ public class Car {
         return consumption;
     }
 
-    public void setConsumption(int consumption) {
+    public void setConsumption(int Consumption) {
         this.consumption = consumption; 
     }
     
     public int getMilage() {
-        return milage;
+        return Milage;
     }
 
+    public int getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(int Fuel) {
+        this.fuel = fuel;
+    }
+    
+    
     public void setMilage(int milage) {
-        this.milage = milage;
+        this.Milage = milage;
     }
 
     public void printAttributes(){
@@ -105,15 +118,29 @@ public class Car {
         System.out.println("Boja: " + this.getColor());
         System.out.println("Potrosnja: " + this.getConsumption());
         System.out.println("Kilometraza: " + this.getMilage());
-        System.out.println("Max Speed: " + this.getmaxSpeed());
+        System.out.println("Trenutno goriva: " + this.getFuel() + " L ");
+        System.out.println("Max Speed: " + this.getMaxSpeed());
         System.out.println();
     }
     
     public void goToTravel(int distance) {
+        int fuelNeededForTravel = (distance / 100) * this.getConsumption();
+        
+        if (this.getFuel() > (distance / 100) * this.getConsumption()) {
+            System.out.println("Uspesno predjen put od " + distance);
+            this.setMilage(this.getMilage() + distance);
+        }else{
+            System.out.println("Nemate dovoljno goriva za put " + distance);
+        }
        this.setMilage(this.getMilage() + distance);
     }
 
     
     
     
-}
+                
+                
+       
+    }
+    
+
