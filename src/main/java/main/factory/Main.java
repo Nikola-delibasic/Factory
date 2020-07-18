@@ -30,17 +30,25 @@ public class Main {
     
     lada.printAttributes();
    
-    Car Yugo = new Car("Yugo 45", 1999, 150, 120, 5, 12000);
+    Car Yugo = new Car("Yugo 45", 1999, 150, 120, 10, 12000);
     Yugo.printAttributes();
     
 //    prvo putovanje
-    Yugo.goToTravel(200);
+    Yugo.setMaxFuel(60);
+    Yugo.setFuel(0);
+    Yugo.setConsumption(10);
+    
+    Yugo.fuelUp(70);
+    
+    Yugo.goToTravel(300);
     Yugo.printAttributes();
     
 //    drugo putovanje
     Yugo.goToTravel(50);
     Yugo.printAttributes();
     
+    Yugo.goToTravel(25);
+    Yugo.printAttributes();
     
     }
     
